@@ -1,0 +1,129 @@
+1   create table person(
+  persons_id serial,
+  name varchar(100),
+  age int,
+  height_in_cm float,
+  city varchar(100),
+  favorite_color varchar(50)
+  );
+2.  insert into person
+(name, age, height_in_cm, city, favorite_color)
+values
+('Neal', 38, 130, 'San Diego', 'Teal');   X5
+
+3 select * from person
+order by height_in_cm desc;
+
+4 select *  from person
+order by height_in_cm asc;
+
+5 select * from person
+order by age desc;
+
+6 select *  from person
+where age > 20;
+
+7 select * from person
+where age = 18;
+
+8 select * from person
+where age < 20 or age > 30;
+ 
+9  select * from person 
+where age != 27;
+
+10 select * from person
+where favorite_color != 'Red';
+
+11 select * from person 
+where favorite_color != 'Red' and favorite_color != 'Blue';
+
+12 select * from person 
+where favorite_color  = ‘Orange' or favorite_color = ‘Green’;
+
+13 select * from person 
+where favorite_color in ('Orange','Green','Blue');
+
+14 select * from person 
+where favorite_color in ('Yellow','Purple');
+
+Table - Orders 
+
+1 create table orders (
+	order_id serial,
+  person_id int,
+  product_name varchar(150),
+  product_price float,
+  quantity int 
+);
+
+2 insert into orders
+ (person_id, product_price, quantity, product_name)
+values 
+  (1, 15.50, 100000, 'basketball'); x5
+
+3 select * from orders;
+
+4 select sum(quantity) from orders;
+
+5 select sum(product_price) from orders;
+
+6 select sum(product_price) from orders
+where person_id = 99;
+
+Table - Artist
+
+1insert into artist 
+(name)
+values
+('Bob Dylan'); X3
+
+2 select name  from artist
+where artist_id < 11
+Order by name desc;
+
+3 select name  from artist
+where artist_id < 6
+ 
+4 select * from artist 
+where name like 'Black%';
+
+5 select * from artist 
+where name like ‘%Black%';
+
+
+Table - Employee
+
+1  select first_name, last_name from employee 
+where city = 'Calgary';
+
+2 select max( birth_date) from employee;									
+3  select min( birth_date) from employee;
+
+4 select * from employee
+where employee_id = 2; 
+
+5 select count(*) from employee
+where city = 'Lethbridge'; 
+
+Table- invoice									
+
+1  select count(*) from invoice
+where billing_country = 'USA';
+
+2 select max(total) from invoice;
+
+3 select min(total)from invoice;
+
+4  select * from invoice 
+where total > 5;
+
+5 select count(*) from invoice
+where total < 5;
+ 
+6 select count(*) from invoice
+where  billing_state in ('CA', 'TX', 'AZ');
+
+7 select avg(total) from invoice;
+ 
+8 select sum(total) from invoice;
